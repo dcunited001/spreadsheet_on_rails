@@ -1,3 +1,7 @@
+Added a way to convert the Spreadsheet::Workbook to a CSV
+-DC
+
+
 = SpreadsheetOnRails
 
 A gem to generate xls documents by using rxls templates.
