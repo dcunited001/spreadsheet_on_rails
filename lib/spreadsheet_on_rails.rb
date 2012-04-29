@@ -50,12 +50,12 @@ ActionView::Template.register_template_handler :"xls.rxls", lambda { |template|
 # Adds support for `format.xls`
 require "action_controller"
 Mime::Type.register "application/xls", :xls
-Mime::Type.register "application/csv", :csv
+Mime::Type.register "text/csv", :csv
 
 ActionController::Renderers.add :xls do |filename, options|
   send_data(render_to_string(options), :filename => "#{filename}.xls", :type => "application/xls", :disposition => "attachment")
 end
 
 ActionController::Renderers.add :csv do |filename, options|
-  send_data(render_to_string(options), :filename => "#{filename}.csv", :type => "application/csv", :disposition => "attachment")
+  send_data(render_to_string(options), :filename => "#{filename}.csv", :type => "text/csv", :disposition => "attachment")
 end
